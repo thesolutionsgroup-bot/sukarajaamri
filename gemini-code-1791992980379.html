@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Suka Raja Amri</title>
+    <style>
+        /* Gaya Dasar & Publik */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f9; color: #333; margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 950px; margin: auto; padding: 20px; }
+        #cv-publik { display: block; }
+        header { background: #2c3e50; color: #fff; text-align: center; padding: 40px 20px; border-radius: 0 0 10px 10px; }
+        .profile-img-container { width: 160px; height: 160px; margin: 0 auto 15px; border-radius: 50%; overflow: hidden; border: 4px solid #fff; background: #ddd; }
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
+        header p { margin: 5px 0 0; font-size: 1.1em; color: #bdc3c7; }
+        
+        .section { background: #fff; margin-top: 25px; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .section h2 { border-bottom: 2px solid #2c3e50; padding-bottom: 10px; color: #2c3e50; margin-top: 0; text-transform: uppercase; font-size: 1.4em; }
+        
+        .item-list { margin-bottom: 25px; }
+        .item-list:last-child { margin-bottom: 0; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 10px; }
+        .item-title { font-weight: bold; font-size: 1.2em; color: #2c3e50; }
+        .item-subtitle { font-style: italic; color: #7f8c8d; font-weight: bold; margin-bottom: 5px; }
+        .item-waktu { color: #e67e22; font-weight: bold; font-size: 0.95em; }
+        .item-deskripsi { margin: 0; padding-left: 15px; color: #444; }
+        .item-deskripsi ul { margin-top: 5px; margin-bottom: 10px; padding-left: 20px; }
+        
+        .text-list { padding-left: 20px; margin: 10px 0; }
+        .text-list li { margin-bottom: 8px; }
+        
+        .grid-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px; }
+        .gallery-item { background: #ecf0f1; padding: 10px; border-radius: 5px; text-align: center; }
+        .gallery-item img { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .gallery-item p { margin: 10px 0 0; font-size: 0.9em; font-weight: bold; color: #2c3e50; }
+        
+        /* Gaya Berita / Layanan */
+        .berita-card { display: flex; gap: 15px; background: #fafafa; padding: 15px; border-radius: 8px; border: 1px solid #eaeaea; margin-bottom: 15px; }
+        .berita-img { width: 120px; height: 120px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+        .berita-content h3 { margin: 0 0 5px 0; color: #2c3e50; font-size: 1.2em; }
+        .berita-content small { color: #e67e22; font-weight: bold; display: block; margin-bottom: 8px; }
+        
+        footer { text-align: center; padding: 40px; margin-top: 20px; color: #95a5a6; user-select: none; }
+        .hidden-trigger { cursor: default; }
+
+        /* Gaya Admin Panel */
+        #panel-admin { display: none; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 20px; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #e74c3c; padding-bottom: 15px; margin-bottom: 25px; }
+        .admin-header h1 { color: #e74c3c; margin: 0; }
+        
+        button { background: #3498db; color: #fff; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #2980b9; }
+        button.btn-danger { background: #e74c3c; padding: 6px 12px; font-size: 0.9em; }
+        button.btn-danger:hover { background: #c0392b; }
+        
+        .admin-section { background: #f8f9fa; padding: 25px; margin-bottom: 25px; border-radius: 8px; border: 1px solid #ddd; }
+        .admin-section h3 { margin-top: 0; color: #34495e; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #2c3e50; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
+        .form-group input[type="file"] { padding: 8px; background: #fff; }
+        
+        .data-row { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 15px; margin-bottom: 10px; border: 1px solid #eee; border-left: 4px solid #3498db; border-radius: 4px; }
+        .data-info strong { display: block; color: #2c3e50; font-size: 1.1em; }
+        .data-info span { color: #7f8c8d; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- TAMPILAN CV PUBLIK -->
+    <div id="cv-publik">
+        <header>
+            <div class="profile-img-container">
+                <img id="pub-img" src="" alt="Foto Profil">
+            </div>
+            <h1 id="pub-nama"></h1>
+            <p id="pub-kontak"></p>
+        </header>
+
+        <div class="section">
+            <h2>Ringkasan Profesional</h2>
+            <p id="pub-ringkasan" style="text-align: justify;"></p>
+        </div>
+
+        <div class="section">
+            <h2>Pendidikan</h2>
+            <div id="pub-pendidikan"></div>
+        </div>
+
+        <div class="section">
+            <h2>Pengalaman Kerja</h2>
+            <div id="pub-pengalaman"></div>
+        </div>
+        
+        <div class="section">
+            <h2>Pengalaman Organisasi</h2>
+            <div id="pub-organisasi"></div>
+        </div>
+
+        <div class="section">
+            <h2>Sertifikat & Pelatihan</h2>
+            <ul class="text-list" id="pub-sertif-teks"></ul>
+            <div class="grid-gallery" id="pub-sertif-foto"></div>
+        </div>
+        
+        <div class="section">
+            <h2>Keahlian & Bahasa</h2>
+            <ul class="text-list" id="pub-keahlian"></ul>
+        </div>
+
+        <div class="section">
+            <h2>Proyek & Bisnis Mandiri</h2>
+            <div id="pub-proyek"></div>
+            <div class="grid-gallery" id="pub-proyek-foto"></div>
+        </div>
+
+        <!-- SECTION BARU: BERITA & LAYANAN -->
+        <div class="section">
+            <h2>Berita & Layanan</h2>
+            <div id="pub-berita"></div>
+        </div>
+
+        <footer>
+            <span class="hidden-trigger" ondblclick="cekLogin()">© 2026 Suka Raja Amri</span>
+        </footer>
+    </div>
+
+
+    <!-- TAMPILAN ADMIN PANEL -->
+    <div id="panel-admin">
+        <div class="admin-header">
+            <h1>⚙️ Dashboard Admin CV</h1>
+            <button onclick="keluarAdmin()">Simpan & Lihat CV</button>
+        </div>
+
+        <div class="admin-section">
+            <h3>1. Identitas & Foto Profil</h3>
+            <div class="form-group">
+                <label>Upload Foto Profil Baru (Kosongkan jika tidak ingin ganti):</label>
+                <input type="file" id="edit-img-file" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label>Nama Lengkap:</label>
+                <input type="text" id="edit-nama">
+            </div>
+            <div class="form-group">
+                <label>Kontak & Website:</label>
+                <input type="text" id="edit-kontak">
+            </div>
+            <div class="form-group">
+                <label>Ringkasan Profesional:</label>
+                <textarea id="edit-ringkasan" rows="6"></textarea>
+            </div>
+            <button onclick="simpanProfil()">Perbarui Profil</button>
+        </div>
+
+        <div class="admin-section">
+            <h3>2. Kelola Pendidikan</h3>
+            <div class="form-group">
+                <input type="text" id="pend-instansi" placeholder="Instansi (misal: Universitas Samudra)">
+                <input type="text" id="pend-posisi" placeholder="Jurusan/Status (misal: S1 Teknik Sipil)" style="margin-top: 5px;">
+                <input type="text" id="pend-waktu" placeholder="Periode (misal: 2024 - Sekarang)" style="margin-top: 5px;">
+                <button onclick="tambahData('pendidikan')" style="margin-top: 10px;">Tambah Pendidikan</button>
+            </div>
+            <div id="admin-pendidikan"></div>
+        </div>
+
+        <div class="admin-section">
+            <h3>3. Kelola Pengalaman Kerja</h3>
+            <div class="form-group">
+                <input type="text" id="peng-instansi" placeholder="Instansi / Tempat Kerja">
+                <input type="text" id="peng-posisi" placeholder="Posisi / Jabatan" style="margin-top: 5px;">
+                <input type="text" id="peng-waktu" placeholder="Periode Waktu" style="margin-top: 5px;">
+                <textarea id="peng-desk" placeholder="Deskripsi Pekerjaan (Gunakan enter atau <li> untuk poin)" rows="3" style="margin-top: 5px;"></textarea>
+                <button onclick="tambahData('pengalaman')" style="margin-top: 10px;">Tambah Pengalaman</button>
+            </div>
+            <div id="admin-pengalaman"></div>
+        </div>
+
+        <div class="admin-section">
+            <h3>4. Kelola Pengalaman Organisasi</h3>
+            <div class="form-group">
+                <input type="text" id="org-instansi" placeholder="Nama Organisasi">
+                <input type="text" id="org-posisi" placeholder="Posisi / Jabatan" style="margin-top: 5px;">
+                <input type="text" id="org-waktu" placeholder="Periode Waktu" style="margin-top: 5px;">
+                <button onclick="tambahData('organisasi')" style="margin-top: 10px;">Tambah Organisasi</button>
+            </div>
+            <div id="admin-organisasi"></div>
+        </div>
+
+        <div class="admin-section">
+            <h3>5. Kelola Teks Sertifikat & Keahlian</h3>
+            <div class="form-group">
+                <input type="text" id="input-sertif-teks" placeholder="Nama Sertifikat / Pelatihan">
+                <button onclick="tambahList('sertifikatTeks', 'input-sertif-teks')" style="margin-top: 5px;">Tambah Sertifikat</button>
+            </div>
+            <div id="admin-sertif-teks" style="margin-bottom: 20px;"></div>
+
+            <div class="form-group">
+                <input type="text" id="input-keahlian" placeholder="Keahlian (misal: Bahasa: Bahasa Indonesia)">
+                <button onclick="tambahList('keahlian', 'input-keahlian')" style="margin-top: 5px;">Tambah Keahlian</button>
+            </div>
+            <div id="admin-keahlian"></div>
+        </div>
+
+        <div class="admin-section">
+            <h3>6. Kelola Proyek & Bisnis</h3>
+            <div class="form-group">
+                <input type="text" id="pro-instansi" placeholder="Nama Proyek / Bisnis">
+                <input type="text" id="pro-posisi" placeholder="Peran / Jabatan" style="margin-top: 5px;">
+                <input type="text" id="pro-waktu" placeholder="Periode Waktu" style="margin-top: 5px;">
+                <textarea id="pro-desk" placeholder="Deskripsi Proyek (Bisa gunakan tag HTML)" rows="4" style="margin-top: 5px;"></textarea>
+                <button onclick="tambahData('proyek')" style="margin-top: 10px;">Tambah Proyek</button>
+            </div>
+            <div id="admin-proyek"></div>
+        </div>
+
+        <div class="admin-section">
+            <h3>7. Kelola Berita & Layanan</h3>
+            <div class="form-group">
+                <label>Judul Layanan / Berita:</label>
+                <input type="text" id="berita-judul" placeholder="Contoh: Promo Pengurusan NIB">
+                
+                <label style="margin-top: 10px;">Tanggal Publikasi / Status:</label>
+                <input type="text" id="berita-waktu" placeholder="Contoh: Oktober 2026 / Tersedia">
+                
+                <label style="margin-top: 10px;">Deskripsi / Konten Layanan:</label>
+                <textarea id="berita-desk" rows="3" placeholder="Tulis rincian layanan atau berita..."></textarea>
+                
+                <label style="margin-top: 10px;">Upload Gambar (Brosur / Thumbnail):</label>
+                <input type="file" id="berita-file" accept="image/*">
+                
+                <button onclick="tambahBerita()" style="margin-top: 15px;">Posting Berita/Layanan</button>
+            </div>
+            <div id="admin-berita"></div>
+        </div>
+
+        <div class="admin-section">
+            <h3>8. Kelola Galeri Foto (Sistem Upload File)</h3>
+            <div class="form-group">
+                <label>Upload Foto Proyek:</label>
+                <input type="text" id="gal-pro-judul" placeholder="Judul Foto Proyek">
+                <input type="file" id="gal-pro-file" accept="image/*" style="margin-top: 5px;">
+                <button onclick="tambahGaleriFile('galeriProyek', 'gal-pro-judul', 'gal-pro-file')" style="margin-top: 10px;">Upload Foto Proyek</button>
+            </div>
+            <div id="admin-gal-pro" style="margin-bottom: 20px;"></div>
+
+            <div class="form-group">
+                <label>Upload Foto Sertifikat:</label>
+                <input type="text" id="gal-ser-judul" placeholder="Judul Foto Sertifikat">
+                <input type="file" id="gal-ser-file" accept="image/*" style="margin-top: 5px;">
+                <button onclick="tambahGaleriFile('galeriSertif', 'gal-ser-judul', 'gal-ser-file')" style="margin-top: 10px;">Upload Foto Sertifikat</button>
+            </div>
+            <div id="admin-gal-ser"></div>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    const ptTSG_Deskripsi = `PT. The Solutions Group adalah perusahaan penyedia layanan legalitas bisnis dan solusi digital terpadu di Indonesia.
+
+<strong>Layanan Utama</strong>
+<ul>
+<li><strong>Pendirian Badan Usaha:</strong> Pengurusan legalitas pendirian PT atau badan usaha lainnya.</li>
+<li><strong>Perizinan & Pajak:</strong> Pembuatan NPWP Badan, SK Kemenkumham, serta pengurusan NIB (Nomor Induk Berusaha) melalui OSS.</li>
+<li><strong>Solusi Digital Bisnis:</strong> Pendukung operasional dan digitalisasi untuk membantu pengembangan usaha.</li>
+</ul>
+
+Jika Anda memerlukan informasi lebih lanjut, silakan beri tahu saya apakah Anda ingin mengetahui:
+<ul>
+<li><strong>Persyaratan dokumen</strong> untuk pendirian PT.</li>
+<li><strong>Estimasi waktu</strong> pengurusan legalitas.</li>
+</ul>`;
+
+    const defaultData = {
+        profil: {
+            img: "https://via.placeholder.com/150?text=Foto+Profil",
+            nama: "SUKA RAJA AMRI",
+            kontak: "Kab. Aceh Timur, Aceh | 082181967344 | sukarajaamri24@gmail.com | Website: https://sites.google.com/view/jasa-id/beranda",
+            ringkasan: "Mahasiswa Teknik Sipil Universitas Samudra yang pekerja keras, adaptif, dan berpengalaman dalam administrasi pemerintahan, penyelenggaraan pemilu, serta pembangunan infrastruktur desa. Terbukti berpengalaman mengelola peran strategis di tingkat kecamatan dan desa, termasuk kesekretariatan pemilu (KIP), manajemen anggaran (SISKEUDES), pembuatan Rencana Anggaran Biaya (RAB) infrastruktur, serta manajemen publikasi digital desa. Memiliki latar belakang pendidikan teknis konstruksi properti yang kuat, keahlian administrasi digital, dan kemampuan mengelola platform mandiri di bidang pelayanan jasa."
+        },
+        pendidikan: [
+            { instansi: "Universitas Samudra – Langsa, Aceh", posisi: "Mahasiswa Aktif S1 - Teknik Sipil (Fakultas Sains dan Teknologi)", waktu: "2024 – Sekarang", desk: "" },
+            { instansi: "SMK Negeri 2 Langsa – Langsa, Aceh", posisi: "Lulusan - Teknik Bisnis Konstruksi Properti", waktu: "2021 – 2022", desk: "" }
+        ],
+        pengalaman: [
+            { instansi: "Pemerintah Gampong Tampur Boor – Aceh Timur", posisi: "Operator Sistem Keuangan Desa (SISKEUDES)", waktu: "Januari 2026 – Sekarang", desk: "• Mengoperasikan aplikasi SISKEUDES untuk tata kelola, perencanaan anggaran, dan realisasi anggaran pendapatan desa secara akurat.\n• Menyusun serta membuat rekapan laporan pertanggungjawaban (LPJ) belanja anggaran desa yang transparan dan akuntabel." },
+            { instansi: "Pemerintah Gampong Ranto Naru – Aceh Timur", posisi: "Operator RAB Pembangunan Desa", waktu: "Juli 2024 – Sekarang", desk: "• Bertanggung jawab penuh dalam perencanaan teknis dan penyusunan Rencana Anggaran Biaya (RAB) untuk proyek pembangunan infrastruktur desa.\n• Melakukan estimasi kebutuhan material dan volume pekerjaan konstruksi guna memastikan efisiensi anggaran pembangunan gampong." },
+            { instansi: "Pemerintah Gampong Ranto Naru – Aceh Timur", posisi: "Operator Website Gampong", waktu: "Juni 2024 – Sekarang", desk: "• Mengelola website resmi desa dan memproduksi konten berita berkala terkait kondisi, potensi, serta perkembangan desa kepada publik.\n• Mengoptimalkan pemanfaatan media sosial sebagai saluran komunikasi interaktif antara pemerintah desa dan masyarakat." },
+            { instansi: "Komisi Independen Pemilihan (KIP) Aceh Timur – Kec. Simpang Jernih", posisi: "Sekretariat Panitia Pemilihan Kecamatan (PPK)", waktu: "2024", desk: "• Membantu kelengkapan administrasi, pelaporan keuangan, dan penyusunan logistik kepanitiaan pemilu di tingkat Kecamatan Simpang Jernih.\n• Mendukung jalannya operasional rapat koordinasi dan rekapitulasi suara Panitia Pemilihan Kecamatan agar berjalan kondusif." },
+            { instansi: "Komisi Independen Pemilihan (KIP) Aceh Timur – Desa HTI Ranto Naru", posisi: "Petugas Pemutakhiran Data Pemilih (Pantarlih) PILKADA 2024", waktu: "2024", desk: "• Melakukan pencocokan dan penelitian (Coklit) data pemilih secara langsung dari rumah ke rumah untuk wilayah kerja Pilkada Aceh Timur 2024.\n• Menyusun laporan berkala pemutakhiran data pemilih resmi guna menjamin hak pilih warga desa terdata dengan akurat." },
+            { instansi: "Pemerintah Gampong Ranto Naru – Aceh Timur", posisi: "Operator Sistem Keuangan Desa (SISKEUDES)", waktu: "Januari 2023 – 2025", desk: "• Mengoperasikan aplikasi SISKEUDES untuk tata kelola, perencanaan anggaran, dan realisasi anggaran pendapatan desa secara akurat.\n• Menyusun serta membuat rekapan laporan pertanggungjawaban (LPJ) belanja anggaran desa yang transparan dan akuntabel." },
+            { instansi: "Pemerintah Gampong Ranto Naru – Aceh Timur", posisi: "Operator Data Terpadu Kesejahteraan Sosial (DTKS)", waktu: "Januari 2023 – Desember 2025", desk: "• Melakukan pendataan, verifikasi, dan validasi kondisi sosial ekonomi masyarakat langsung di lapangan untuk wilayah Kabupaten Aceh Timur.\n• Menginput dan mengelola basis data warga ke dalam sistem DTKS untuk akurasi penyaluran program bantuan sosial pemerintah." },
+            { instansi: "Pangeran Coffee & Resto – Langsa, Aceh", posisi: "Waiters (Pramusaji)", waktu: "April 2022 – Juli 2024", desk: "• Memberikan pelayanan prima kepada pelanggan secara ramah, responsif, dan profesional guna menjaga tingkat kepuasan kafe.\n• Mengelola operasional area makan dan memastikan standar kebersihan serta kenyamanan pengunjung memenuhi kriteria operasional." }
+        ],
+        organisasi: [
+            { instansi: "Ikatan Pelajar Mahasiswa Kecamatan Simpang Jernih (IKAPEMA K-SPJ)", posisi: "Wakil Ketua Umum", waktu: "Periode 2026 - 2027", desk: "" },
+            { instansi: "Ikatan Pelajar Mahasiswa Kecamatan Simpang Jernih (IKAPEMA K-SPJ)", posisi: "Ketua Bidang Informasi dan Komunikasi (INFOKOM)", waktu: "Periode 2025", desk: "" },
+            { instansi: "Himpunan Mahasiswa Teknik Sipil (HMTS) Universitas Samudra", posisi: "Kepala Divisi Bidang Ilmu Pengetahuan dan Teknologi (IPTEK)", waktu: "Periode 2025", desk: "" },
+            { instansi: "Himpunan Mahasiswa Islam (HMI)", posisi: "Kader Aktif", waktu: "2025", desk: "" }
+        ],
+        sertifikatTeks: [
+            "Sertifikat Microsoft & IOE: AI Fluency Training Quiz Completion (6 Structured Courses) – 2026",
+            "Sertifikat Pelatihan HBDC Foundation: Penyuluhan Hukum serta Tupoksi Aparatur Pemerintahan Gampong – 2026",
+            "Sertifikat Pelatihan LMKP: Pelatihan Pengembangan Website Gampong / Desa di The Royal Idi Hotel – 2025",
+            "Sertifikat HMTS Universitas Samudra: Staf Lapangan Kegiatan \"Classical Civil Part VI\" – 2025",
+            "Sertifikat HMTS Universitas Samudra: Peserta Seminar Ketekniksipilan – 2025",
+            "Sertifikat Pelatihan PKPD: Training & Edukasi Aplikasi RAB Pembangunan Desa Se-Kabupaten Aceh Timur – 2024",
+            "Sertifikat HMTS Universitas Samudra: Civil Training \"Basic Training and Introduction to AutoCAD\" – 2024",
+            "Sertifikat Praktik Kerja Industri (Prakerin/PKL): Bidang Keahlian Teknik Bisnis Konstruksi Properti di SMK Negeri 2 Langsa – Nilai A (Baik Sekali) – 2022"
+        ],
+        keahlian: [
+            "Keahlian Teknis: Pembuatan RAB Infrastruktur, Pengoperasian AutoCAD, SISKEUDES, DTKS, Microsoft Excel & Word, Manajemen Media Sosial, Website Gampong.",
+            "Keahlian Non-Teknis: Kerja Sama Tim, Perencanaan Anggaran, Komunikasi Publik, Manajemen Waktu, Akurasi Pendataan.",
+            "Bahasa: Bahasa Indonesia (Native/Fasih)."
+        ],
+        proyek: [
+            { instansi: "PT. THE SOLUTIONS GROUP (JASA.ID)", posisi: "Founder / Owner", waktu: "2024 – Sekarang", desk: ptTSG_Deskripsi }
+        ],
+        berita: [
+            { judul: "Layanan Pembuatan PT & NIB Cepat", waktu: "Tersedia", desk: "Dapatkan layanan pengurusan legalitas bisnis yang cepat dan terpercaya bersama PT. The Solutions Group.", img: "https://via.placeholder.com/150?text=Promo+NIB" }
+        ],
+        galeriProyek: [],
+        galeriSertif: []
+    };
+
+    let db = null;
+
+    // Inisialisasi IndexedDB agar tidak ada batasan ukuran file (Bisa upload ratusan foto)
+    const request = indexedDB.open("CVDatabase_Unlimited", 1);
+    
+    request.onupgradeneeded = function(event) {
+        let idb = event.target.result;
+        if (!idb.objectStoreNames.contains("cvStore")) {
+            idb.createObjectStore("cvStore");
+        }
+    };
+
+    request.onsuccess = function(event) {
+        let idb = event.target.result;
+        let transaction = idb.transaction("cvStore", "readonly");
+        let store = transaction.objectStore("cvStore");
+        let getRequest = store.get("myCVData");
+        
+        getRequest.onsuccess = function() {
+            if (getRequest.result) {
+                db = getRequest.result;
+            } else {
+                db = JSON.parse(JSON.stringify(defaultData)); 
+            }
+            renderSemua();
+        };
+    };
+
+    request.onerror = function(event) {
+        alert("Database error: Mohon pastikan browser Anda mengizinkan penyimpanan data lokal.");
+    };
+
+    function simpanKeDB() {
+        let req = indexedDB.open("CVDatabase_Unlimited", 1);
+        req.onsuccess = function(event) {
+            let idb = event.target.result;
+            let tx = idb.transaction("cvStore", "readwrite");
+            let store = tx.objectStore("cvStore");
+            store.put(db, "myCVData");
+            tx.oncomplete = function() {
+                renderSemua();
+            };
+        };
+    }
+
+    function formatDeskripsi(teks) {
+        if (!teks) return "";
+        return teks.replace(/\n/g, "<br>");
+    }
+
+    function renderSemua() {
+        if (!db) return; // Tunggu database siap
+        
+        // --- PUBLIK RENDER ---
+        document.getElementById('pub-img').src = db.profil.img;
+        document.getElementById('pub-nama').innerText = db.profil.nama;
+        document.getElementById('pub-kontak').innerText = db.profil.kontak;
+        document.getElementById('pub-ringkasan').innerText = db.profil.ringkasan;
+
+        const renderDataObj = (dataArr, elemId) => {
+            let html = '';
+            dataArr.forEach(item => {
+                html += `
+                <div class="item-list">
+                    <div class="item-header">
+                        <span class="item-title">${item.instansi}</span>
+                        <span class="item-waktu">${item.waktu}</span>
+                    </div>
+                    <div class="item-subtitle">${item.posisi}</div>
+                    ${item.desk ? `<div class="item-deskripsi">${formatDeskripsi(item.desk)}</div>` : ''}
+                </div>`;
+            });
+            document.getElementById(elemId).innerHTML = html;
+        };
+
+        renderDataObj(db.pendidikan, 'pub-pendidikan');
+        renderDataObj(db.pengalaman, 'pub-pengalaman');
+        renderDataObj(db.organisasi, 'pub-organisasi');
+        renderDataObj(db.proyek, 'pub-proyek');
+
+        // Render Berita / Layanan
+        let beritaHtml = '';
+        db.berita.forEach((b) => {
+            beritaHtml += `
+            <div class="berita-card">
+                ${b.img ? `<img src="${b.img}" alt="${b.judul}" class="berita-img">` : ''}
+                <div class="berita-content">
+                    <h3>${b.judul}</h3>
+                    <small>${b.waktu}</small>
+                    <p style="margin:0">${formatDeskripsi(b.desk)}</p>
+                </div>
+            </div>`;
+        });
+        if(db.berita.length === 0) beritaHtml = '<p style="color:#7f8c8d;">Belum ada berita / layanan.</p>';
+        document.getElementById('pub-berita').innerHTML = beritaHtml;
+
+        const renderDataList = (dataArr, elemId) => {
+            let html = '';
+            dataArr.forEach(item => html += `<li>${item}</li>`);
+            document.getElementById(elemId).innerHTML = html;
+        };
+        renderDataList(db.sertifikatTeks, 'pub-sertif-teks');
+        renderDataList(db.keahlian, 'pub-keahlian');
+
+        const renderGaleri = (dataArr, elemId) => {
+            let html = '';
+            dataArr.forEach(img => {
+                html += `<div class="gallery-item"><img src="${img.url}" alt="${img.judul}"><p>${img.judul}</p></div>`;
+            });
+            document.getElementById(elemId).innerHTML = html;
+        };
+        renderGaleri(db.galeriProyek, 'pub-proyek-foto');
+        renderGaleri(db.galeriSertif, 'pub-sertif-foto');
+
+        // --- ADMIN RENDER ---
+        document.getElementById('edit-nama').value = db.profil.nama;
+        document.getElementById('edit-kontak').value = db.profil.kontak;
+        document.getElementById('edit-ringkasan').value = db.profil.ringkasan;
+
+        const renderAdminDataObj = (kategori, elemId) => {
+            let html = '';
+            db[kategori].forEach((item, index) => {
+                html += `<div class="data-row">
+                    <div class="data-info">
+                        <strong>${item.instansi || item.judul}</strong>
+                        <span>${item.posisi || item.waktu}</span>
+                    </div>
+                    <button class="btn-danger" onclick="hapusArrayObj('${kategori}', ${index})">Hapus</button>
+                </div>`;
+            });
+            document.getElementById(elemId).innerHTML = html;
+        };
+        renderAdminDataObj('pendidikan', 'admin-pendidikan');
+        renderAdminDataObj('pengalaman', 'admin-pengalaman');
+        renderAdminDataObj('organisasi', 'admin-organisasi');
+        renderAdminDataObj('proyek', 'admin-proyek');
+        renderAdminDataObj('berita', 'admin-berita');
+
+        const renderAdminDataList = (kategori, elemId) => {
+            let html = '';
+            db[kategori].forEach((item, index) => {
+                html += `<div class="data-row">
+                    <div class="data-info" style="font-size:0.9em;">${item}</div>
+                    <button class="btn-danger" onclick="hapusArrayObj('${kategori}', ${index})">Hapus</button>
+                </div>`;
+            });
+            document.getElementById(elemId).innerHTML = html;
+        };
+        renderAdminDataList('sertifikatTeks', 'admin-sertif-teks');
+        renderAdminDataList('keahlian', 'admin-keahlian');
+
+        const renderAdminGaleri = (kategori, elemId) => {
+            let html = '';
+            db[kategori].forEach((item, index) => {
+                html += `<div class="data-row">
+                    <div class="data-info"><strong>${item.judul}</strong></div>
+                    <button class="btn-danger" onclick="hapusArrayObj('${kategori}', ${index})">Hapus</button>
+                </div>`;
+            });
+            document.getElementById(elemId).innerHTML = html;
+        };
+        renderAdminGaleri('galeriProyek', 'admin-gal-pro');
+        renderAdminGaleri('galeriSertif', 'admin-gal-ser');
+    }
+
+    function cekLogin() {
+        let user = prompt("Masukkan Username Admin:");
+        if (user === null) return;
+        let pass = prompt("Masukkan Password:");
+        
+        if(user === "cvku" && pass === "cvku") {
+            document.getElementById('cv-publik').style.display = 'none';
+            document.getElementById('panel-admin').style.display = 'block';
+            window.scrollTo(0,0);
+        } else {
+            alert("Akses Ditolak!");
+        }
+    }
+
+    function keluarAdmin() {
+        document.getElementById('panel-admin').style.display = 'none';
+        document.getElementById('cv-publik').style.display = 'block';
+        window.scrollTo(0,0);
+    }
+
+    function simpanProfil() {
+        db.profil.nama = document.getElementById('edit-nama').value;
+        db.profil.kontak = document.getElementById('edit-kontak').value;
+        db.profil.ringkasan = document.getElementById('edit-ringkasan').value;
+
+        let fileInput = document.getElementById('edit-img-file');
+        if (fileInput.files.length > 0) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                db.profil.img = e.target.result;
+                simpanKeDB();
+                alert("Profil & Foto berhasil diperbarui!");
+            };
+            reader.readAsDataURL(fileInput.files[0]);
+        } else {
+            simpanKeDB();
+            alert("Profil berhasil diperbarui!");
+        }
+    }
+
+    function tambahData(kategori) {
+        let prefix = '';
+        if(kategori === 'pendidikan') prefix = 'pend-';
+        else if(kategori === 'pengalaman') prefix = 'peng-';
+        else if(kategori === 'organisasi') prefix = 'org-';
+        else if(kategori === 'proyek') prefix = 'pro-';
+
+        let i = document.getElementById(prefix + 'instansi').value;
+        let p = document.getElementById(prefix + 'posisi').value;
+        let w = document.getElementById(prefix + 'waktu').value;
+        let dElement = document.getElementById(prefix + 'desk');
+        let d = dElement ? dElement.value : '';
+
+        if(i && p && w) {
+            db[kategori].unshift({ instansi: i, posisi: p, waktu: w, desk: d });
+            document.getElementById(prefix + 'instansi').value = '';
+            document.getElementById(prefix + 'posisi').value = '';
+            document.getElementById(prefix + 'waktu').value = '';
+            if(dElement) dElement.value = '';
+            simpanKeDB();
+        } else {
+            alert("Instansi, Posisi, dan Waktu wajib diisi!");
+        }
+    }
+
+    function tambahBerita() {
+        let j = document.getElementById('berita-judul').value;
+        let w = document.getElementById('berita-waktu').value;
+        let d = document.getElementById('berita-desk').value;
+        let fileInput = document.getElementById('berita-file');
+
+        if(!j || !d) {
+            alert("Judul dan Deskripsi wajib diisi!");
+            return;
+        }
+
+        if (fileInput.files.length > 0) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                db.berita.unshift({ judul: j, waktu: w, desk: d, img: e.target.result });
+                resetFormBerita();
+                simpanKeDB();
+            };
+            reader.readAsDataURL(fileInput.files[0]);
+        } else {
+            db.berita.unshift({ judul: j, waktu: w, desk: d, img: "" });
+            resetFormBerita();
+            simpanKeDB();
+        }
+    }
+
+    function resetFormBerita() {
+        document.getElementById('berita-judul').value = '';
+        document.getElementById('berita-waktu').value = '';
+        document.getElementById('berita-desk').value = '';
+        document.getElementById('berita-file').value = '';
+    }
+
+    function tambahList(kategori, inputId) {
+        let val = document.getElementById(inputId).value;
+        if(val) {
+            db[kategori].push(val);
+            document.getElementById(inputId).value = '';
+            simpanKeDB();
+        }
+    }
+
+    function tambahGaleriFile(kategori, idJudul, idInputFile) {
+        let j = document.getElementById(idJudul).value;
+        let fileInput = document.getElementById(idInputFile);
+        
+        if(!j || fileInput.files.length === 0) {
+            alert("Judul dan File Foto wajib diisi!");
+            return;
+        }
+
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let base64Image = e.target.result;
+            db[kategori].push({ judul: j, url: base64Image });
+            
+            document.getElementById(idJudul).value = '';
+            fileInput.value = '';
+            simpanKeDB();
+            alert("Foto berhasil diunggah!");
+        };
+        
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+
+    function hapusArrayObj(kategori, index) {
+        if(confirm("Yakin ingin menghapus data ini?")) {
+            db[kategori].splice(index, 1);
+            simpanKeDB();
+        }
+    }
+</script>
+
+</body>
+</html>
